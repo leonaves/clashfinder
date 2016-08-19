@@ -1,4 +1,6 @@
 import React from 'react';
+import leftPad from 'left-pad';
+import './Stage.css';
 
 export default ({ name, sets }) => (
   <div className="stage">
@@ -9,9 +11,16 @@ export default ({ name, sets }) => (
       {
         sets.map(set =>
           <div key={ set.actName + set.startTime.toString() } className="set">
-            { set.actName }
-            { set.startTime.toString() }
-            { set.endTime.toString() }
+            <div className="actName">
+              { set.actName }
+            </div>
+            <div className="actTimes">
+              {
+                set.startTime.getUTCHours() + ':' + leftPad(set.startTime.getUTCMinutes(), 2, 0)
+                + ' – ' +
+                set.endTime.getUTCHours() + ':' + leftPad(set.endTime.getUTCMinutes(), 2, 0)
+              }
+            </div>
           </div>
         )
       }

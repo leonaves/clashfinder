@@ -1,0 +1,26 @@
+.stage {
+    width: 300px;
+    max-width: 100vw;
+    min-height: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.stage .stageName {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.stage .sets {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+}
+
+.stage .sets .set {
+    width: 100%;
+}

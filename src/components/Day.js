@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Day.css'
 import Stage from './Stage';
 
 export default ({ day }) => {
@@ -8,7 +9,7 @@ export default ({ day }) => {
       {
         day.hasOwnProperty("stages") ?
         day.stages.map(stage => <Stage key={ stage.stageName } name={ stage.stageName } sets={ stage.sets } />)
-        : <span>No stages for day.</span>
+        : <span>No sets for day.</span>
       }
     </div>
   )
