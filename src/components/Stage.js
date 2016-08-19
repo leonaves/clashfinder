@@ -8,10 +8,10 @@ export default ({ name, sets }) => (
     <div className="sets">
       {
         sets.map(set =>
-          <div className="set">
+          <div key={ set.actName + set.startTime.toString() } className="set">
             { set.actName }
-            { set.startTime }
-            { set.endTime }
+            { set.startTime.toString() }
+            { set.endTime.toString() }
           </div>
         )
       }

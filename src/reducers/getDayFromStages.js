@@ -1,5 +1,5 @@
 export default (dayIndex) => (stages) => {
-  const days = stages.reduce((days, stage) => {
+  const dayStages = stages.reduce((days, stage) => {
     const stageName = stage.name;
 
     const stageByDay = stage.sets.reduce((stageByDay, set) => {
@@ -24,11 +24,14 @@ export default (dayIndex) => (stages) => {
     return days;
   }, {});
 
-  const sortedDayKeys = Object.keys(days).sort((a, b) => {
+  const sortedDayKeys = Object.keys(dayStages).sort((a, b) => {
     const aSecs = Date.parse(a);
     const bSecs = Date.parse(a);
     return aSecs === bSecs ? 0 : aSecs > bSecs ? 1 : -1;
   });
 
-  return days[sortedDayKeys[dayIndex]];
+  return {
+    day: sortedDayKeys[dayIndex],
+    stages: dayStages[sortedDayKeys[dayIndex]]
+  };
 }

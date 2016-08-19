@@ -11,20 +11,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      day: 1
+      day: 0
     };
   }
 
   render() {
     const day = getDayFromStages(this.state.day)(stages);
 
-    console.log(day);
     return (
       <div className="App">
         <div className="App-header">
           <h2>Welcome to Clashfinder</h2>
         </div>
-        {/*<Day day={ day }/>*/}
+        <Day day={ day }/>
       </div>
     );
   }
