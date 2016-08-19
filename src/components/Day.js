@@ -2,7 +2,7 @@ import React from 'react';
 
 import Stage from './Stage';
 
-export default ({ day }) -> {
+export default ({ day }) => {
   return (
     <div className="day">
       {

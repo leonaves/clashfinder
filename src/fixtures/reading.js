@@ -1,7 +1,7 @@
 const stages = [
   {
     "name":"Main Stage",
-    "events":[
+    "sets":[
       {"name":"Frank Turner & The Sleeping Souls","start":"2016-08-26 12:00","end":"2016-08-26 12:45"},
       {"name":"Frank Carter & the Rattlesnakes","start":"2016-08-26 13:10","end":"2016-08-26 13:40"},
       {"name":"Nothing But Thieves","start":"2016-08-26 14:05","end":"2016-08-26 14:40"},
@@ -271,7 +271,7 @@ const stages = [
       {"name":"The Shimmer Band","start":"2016-08-27 18:25","end":"2016-08-27 18:50"},
       {"name":"Ten Tonnes","start":"2016-08-27 19:10","end":"2016-08-27 19:35"},
       {"name":"Fronteers","start":"2016-08-27 19:55","end":"2016-08-27 20:20"},
-      {"name":"Adore\/\/repel","start":"2016-08-28 11:40","end":"2016-08-28 12:00"},
+      {"name":"Adore//repel","start":"2016-08-28 11:40","end":"2016-08-28 12:00"},
       {"name":"Night Owls","start":"2016-08-28 12:25","end":"2016-08-28 12:50"},
       {"name":"Hardwicke Circus","start":"2016-08-28 13:10","end":"2016-08-28 13:35"},
       {"name":"CaStLeS","start":"2016-08-28 13:55","end":"2016-08-28 14:20"},
