@@ -3,7 +3,7 @@ import leftPad from 'left-pad';
 import './Stage.css';
 
 const dayStartTime = new Date('2016-08-26 10:30 UTC');
-const minutesToPixels = 2
+const minutesToPixels = 2;
 
 const positionFromTime = startTime => {
   const timeDiff = Math.abs(startTime.getTime() - dayStartTime.getTime());
@@ -19,9 +19,7 @@ const heightFromDuration = (startTime, endTime) => {
 
 export default ({ name, sets }) => (
   <div className="stage">
-    <div className="stageName">
-      { name }
-    </div>
+    <div className="stageName">{ name }</div>
     <div className="sets">
       {
         sets.map(set =>
