@@ -12,7 +12,7 @@ export default ({ day }) => {
           <div className="stageNameContainer">
             { day.stages.map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
           </div>
-          <div className="stageSetsContainer">
+          <div className="stageSetsContainer" style={{ width: totalDayWidth(day) + 'px' }}>
             { day.stages.map(stage => (
               <StageSets
                 key={ stage.name } name={ stage.name } sets={ stage.sets }
