@@ -10,7 +10,6 @@ const pixelsFromDiff = (a, b) => {
 
 export default ({ name, sets, startTime }) => (
   <div className="stage">
-    { console.log(startTime) }
     <div className="stageName">{ name }</div>
     <div className="sets">
       {

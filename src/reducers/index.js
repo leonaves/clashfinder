@@ -6,7 +6,15 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case 'CHANGE_CURRENT_DAY':
+      state.day = action.value;
+      return Object.assign({}, state);
+    default:
+      return state;
+  }
 }
 
 export const getCurrentDay = (state) => state.days[state.day];
+
+export const getDaysByName = (state) => state.days.map(day => day.start.format('dddd'));
