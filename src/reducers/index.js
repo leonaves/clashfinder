@@ -17,4 +17,6 @@ export default (state = initialState, action) => {
 
 export const getCurrentDay = (state) => state.days[state.day];
 
+export const getCurrentDayIndex = (state) => state.day;
+
 export const getDaysByName = (state) => state.days.map(day => day.start.format('dddd'));

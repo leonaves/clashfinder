@@ -4,16 +4,23 @@ import { connect } from 'react-redux';
 import './App.css';
 
 import Day from './components/Day';
-import { getCurrentDay, getDaysByName } from './reducers/index';
+import { getCurrentDay, getCurrentDayIndex, getDaysByName } from './reducers/index';
 
-const App = ({ day, daysByName, updateDay }) => (
+const App = ({ day, dayIndex, daysByName, updateDay }) => (
   <div className="App">
     <div className="App-header">
+      <div className="dayButtons">
       {
         daysByName.map((dayName, index) => (
-          <button key={ index } onClick={ () => updateDay(index) }>{ dayName }</button>
+          <button
+            className={ index === dayIndex ? 'current' : '' }
+            key={ index } onClick={ () => updateDay(index) }
+          >
+            { dayName }
+          </button>
         ))
       }
+      </div>
     </div>
     <Day day={ day }/>
   </div>
@@ -21,7 +28,8 @@ const App = ({ day, daysByName, updateDay }) => (
 
 const mapStateToProps = (state) => ({
   day: getCurrentDay(state),
-  daysByName: getDaysByName(state)
+  dayIndex: getCurrentDayIndex(state),
+  daysByName: getDaysByName(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
