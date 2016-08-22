@@ -1,4 +1,24 @@
-const stages = [
+export default {
+  UTCOffset: "+01",
+  days: [
+    {
+      start: "2016-08-25 20:30",
+      end: "2016-08-26 04:00"
+    },
+    {
+      start: "2016-08-26 11:30",
+      end: "2016-08-27 04:00"
+    },
+    {
+      start: "2016-08-27 11:30",
+      end: "2016-08-28 04:00"
+    },
+    {
+      start: "2016-08-28 11:30",
+      end: "2016-08-29 04:00"
+    }
+  ],
+  stages: [
   {
     "name":"Main Stage",
     "sets":[
@@ -371,6 +391,4 @@ const stages = [
       {"name":"The Martian","start":"2016-08-29 00:15","end":"2016-08-29 02:35"}
     ]
   }
-];
-
-export default stages;
+]};

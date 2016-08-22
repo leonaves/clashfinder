@@ -8,7 +8,7 @@ export default ({ day }) => {
     <div className="day">
       {
         day.hasOwnProperty("stages") ?
-        day.stages.map(stage => <Stage key={ stage.stageName } name={ stage.stageName } sets={ stage.sets } />)
+        day.stages.map(stage => <Stage key={ stage.name } name={ stage.name } sets={ stage.sets } startTime={ day.start } />)
         : <span>No sets for day.</span>
       }
     </div>

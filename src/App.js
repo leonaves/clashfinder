@@ -1,32 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './App.css';
 
-import stages from './fixtures/reading';
-
 import Day from './components/Day';
-import getDayFromStages from './reducers/getDayFromStages';
+import { getCurrentDay } from './reducers/index';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      day: 0
-    };
-  }
 
-  render() {
-    const day = getDayFromStages(this.state.day)(stages);
 
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to Clashfinder</h2>
-        </div>
-        <Day day={ day }/>
-      </div>
-    );
-  }
-}
+const App = ({ day }) => (
+  <div className="App">
+    <div className="App-header">
+      <h2>Welcome to Clashfinder</h2>
+    </div>
+    <Day day={ day }/>
+  </div>
+);
 
-export default App;
+const mapStateToProps = (state) => ({
+  day: getCurrentDay(state)
+});
+
+export default connect(
+  mapStateToProps
+)(App);
