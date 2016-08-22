@@ -64,7 +64,7 @@ export default {
       {"name":"Fetty Wap","start":"2016-08-26 18:55","end":"2016-08-26 19:30"},
       {"name":"Crystal Castles","start":"2016-08-26 19:55","end":"2016-08-26 20:35"},
       {"name":"Twenty One Pilots","start":"2016-08-26 21:10","end":"2016-08-26 22:05"},
-      {"name":"Jack U","start":"2016-08-26 22:40","end":"2016-08-26 23:25"},
+      {"name":"Jack Ü","start":"2016-08-26 22:40","end":"2016-08-26 23:25"},
       {"name":"Fatherson","start":"2016-08-27 11:55","end":"2016-08-27 12:25"},
       {"name":"Sunset Sons","start":"2016-08-27 12:45","end":"2016-08-27 13:15"},
       {"name":"Highly Suspect","start":"2016-08-27 13:30","end":"2016-08-27 14:00"},

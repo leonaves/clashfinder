@@ -8,10 +8,10 @@ const pixelsFromDiff = (a, b) => {
   return diffMinutes * minutesToPixels;
 };
 
-export default ({ name, sets, startTime }) => (
+export default ({ name, sets, startTime, endTime }) => (
   <div className="stage">
     <div className="stageName">{ name }</div>
-    <div className="sets">
+    <div className="sets" style={{ height: pixelsFromDiff(startTime, endTime) }}>
       {
         sets.map(set =>
           <div
