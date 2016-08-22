@@ -2,7 +2,8 @@
     white-space: nowrap;
     width: 100vw;
     height: calc(100vh - 60px);
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     position: relative;
     background-color: #e3e3e3;
 }

@@ -1,21 +1,28 @@
 import React from 'react';
 
 import './Day.css'
-import Stage from './Stage';
+import StageSets from './StageSets';
+import StageName from './StageName';
+import { totalDayWidth } from '../layoutUtils';
 
 export default ({ day }) => {
-  return (
-    <div className="day">
-      {
-        day.hasOwnProperty("stages") ?
-        day.stages.map(stage => (
-          <Stage
-            key={ stage.name } name={ stage.name } sets={ stage.sets }
-            startTime={ day.start } endTime={ day.end }
-          />
-        ))
-        : <span>No sets for day.</span>
-      }
-    </div>
-  )
+  if (day.hasOwnProperty("stages")) {
+    return (
+      <div className="day">
+          <div className="stageNameContainer">
+            { day.stages.map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
+          </div>
+          <div className="stageSetsContainer">
+            { day.stages.map(stage => (
+              <StageSets
+                key={ stage.name } name={ stage.name } sets={ stage.sets }
+                startTime={ day.start } endTime={ day.end }
+              />
+            )) }
+          </div>
+      </div>
+    );
+  } else {
+    return (<span>No sets for day.</span>);
+  }
 }

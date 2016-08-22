@@ -1,0 +1,14 @@
+.stageName {
+    height: 50px;
+    padding: 10px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fcfa00;
+    color: #d40606;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    width: 250px;
+    margin: 0 15px;
+    max-width: 100vw;
+    display: inline-block;
+}
