@@ -14,7 +14,7 @@ const App = ({ day, settingsOpen }) => (
     <div className="settingsContainer" style={ settingsOpen ? { transform: 'translateY(0)' } : {}}>
       <Settings />
     </div>
-    <div className="AppContainer" style={ settingsOpen ? { opacity: 0.7 } : {}}>
+    <div className="AppContainer" style={ settingsOpen ? { opacity: 0.7 } : {} }>
       <div className="App">
         <AppHeader />
         <Day day={ day }/>
