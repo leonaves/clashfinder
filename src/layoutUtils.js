@@ -1,10 +1,13 @@
+import { getVisibleStagesForDay } from './reducers/index';
+
 export const pixelsToMinutes = 2;
 
 export const timelinePadding = 50;
 
 export const stageWidth = 280;
-export const totalDayWidth = (day) => {
-  return day.stages.filter(stage => !stage.hidden).length * stageWidth + timelinePadding;
+
+export const totalDayWidth = (state, day) => {
+  return getVisibleStagesForDay(state, day).length * stageWidth + timelinePadding;
 };
 
 export const appHeaderHeight = 65;

@@ -7,9 +7,9 @@ import AppHeader from './components/AppHeader';
 import Day from './components/Day';
 import Settings from './components/Settings';
 
-import { getCurrentDay, isSettingsOpen } from './reducers/index';
+import { getCurrentDayIndex, isSettingsOpen } from './reducers/index';
 
-const App = ({ day, settingsOpen }) => (
+const App = ({ dayIndex, settingsOpen }) => (
   <div>
     <div className="settingsContainer" style={ settingsOpen ? { transform: 'translateY(0)' } : {}}>
       <Settings />
@@ -17,14 +17,14 @@ const App = ({ day, settingsOpen }) => (
     <div className="AppContainer" style={ settingsOpen ? { opacity: 0.7 } : {} }>
       <div className="App">
         <AppHeader />
-        <Day day={ day }/>
+        <Day dayIndex={ dayIndex }/>
       </div>
     </div>
   </div>
 );
 
 const mapStateToProps = (state) => ({
-  day: getCurrentDay(state),
+  dayIndex: getCurrentDayIndex(state),
   settingsOpen: isSettingsOpen(state)
 });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Day.css'
 import StageSets from './StageSets';
@@ -7,7 +8,9 @@ import Timeline from './Timeline';
 
 import { totalDayWidth, timelinePadding } from '../layoutUtils';
 
-export default ({ day }) => {
+import { getDayByIndex, getVisibleStagesForDay } from '../reducers/index';
+
+const Day = ({ day, visibleStages, totalDayWidth }) => {
   if (day.hasOwnProperty("stages")) {
     return (
       <div className="day">
@@ -15,22 +18,22 @@ export default ({ day }) => {
             className="stageNameContainer"
             style={{
               paddingLeft: timelinePadding,
-              width: totalDayWidth(day),
+              width: totalDayWidth,
               minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
-            { day.stages.filter(stage => !stage.hidden).map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
+            { visibleStages.map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
           </div>
           <div
             className="stageSetsContainer"
             style={{
               paddingLeft: timelinePadding,
-              width: totalDayWidth(day),
+              width: totalDayWidth,
               minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
             <Timeline day={ day } />
-            { day.stages.filter(stage => !stage.hidden).map(stage => (
+            { visibleStages.map(stage => (
               <StageSets
                 key={ stage.name } name={ stage.name } sets={ stage.sets }
                 startTime={ day.start } endTime={ day.end }
@@ -43,3 +46,15 @@ export default ({ day }) => {
     return (<span>No sets for day.</span>);
   }
 };
+
+const mapStateToProps = (state, ownProps) => {
+  const day = getDayByIndex(state, ownProps.dayIndex);
+  return {
+    day,
+    visibleStages: getVisibleStagesForDay(state, day),
+    totalDayWidth: totalDayWidth(state, day)
+  }
+};
+export default connect(
+  mapStateToProps
+)(Day)
