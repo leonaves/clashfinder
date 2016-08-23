@@ -1,11 +1,14 @@
 import days from '../fixtures/formattedDays';
+import { loadState } from '../localStorage';
 
-const initialState = {
+const freshState = {
   hiddenStages: [],
   settingsOpen: false,
   day: 0,
   days
 };
+
+const initialState = Object.assign(freshState, loadState());
 
 export default (state = initialState, action) => {
   switch (action.type) {

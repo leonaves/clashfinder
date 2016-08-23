@@ -4,12 +4,19 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './App';
-import appReducer from './reducers/index'
+import appReducer from './reducers/index';
+import { saveState } from './localStorage';
 
 import './index.css';
 
 //noinspection JSUnresolvedVariable,JSUnresolvedFunction
 let store = createStore(appReducer, window.devToolsExtension && window.devToolsExtension());
+
+store.subscribe(() => {
+  saveState({
+    hiddenStages: store.getState().hiddenStages
+  });
+});
 
 ReactDOM.render(
   <Provider store={ store }>
