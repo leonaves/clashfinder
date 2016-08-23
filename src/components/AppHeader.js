@@ -6,10 +6,10 @@ import { getCurrentDayIndex, getDaysByName } from '../reducers/index';
 
 import './AppHeader.css';
 
-const AppHeader = ({ dayIndex, daysByName, updateDay }) => (
+const AppHeader = ({ dayIndex, daysByName, updateDay, toggleSettingsOpen }) => (
   <div className="App-header" style={{ height: appHeaderHeight + 'px' }}>
     <div className="settingsButton">
-      <button onClick={ () => {} }>Settings</button>
+      <button onClick={ toggleSettingsOpen }>Settings</button>
     </div>
     <div className="dayButtons">
       {
@@ -32,6 +32,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  toggleSettingsOpen: () => dispatch({ type: 'TOGGLE_SETTINGS_OPEN' }),
   updateDay: (day) => dispatch({ type: 'CHANGE_CURRENT_DAY', value: day })
 });
 
