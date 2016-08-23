@@ -1,0 +1,58 @@
+.App-header {
+    background-color: #222;
+    padding: 15px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.settingsButton {
+    position: absolute;
+    left: 10px;
+}
+
+.settingsButton button {
+    border-radius: 2px;
+}
+
+.dayButtons button, .settingsButton button {
+    height: 35px;
+    padding: 5px 15px;
+    background-color: #454545;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    display:inline-block;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.dayButtons button {
+    border-right: 1px solid #6d6d6d;
+}
+
+.dayButtons button:hover, .settingsButton button:hover {
+    background-color: #555555;
+}
+
+.dayButtons button:active, .settingsButton button:active {
+    transform: scale(0.99);
+    border-right: none;
+}
+.dayButtons button:active + button {
+    border-left: 1px solid #6d6d6d;
+}
+
+.dayButtons button:first-child {
+    border-radius: 3px 0 0 3px;
+}
+
+.dayButtons button:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: none;
+}
+
+.dayButtons button.current {
+    background-color: #8d8e69;
+}

@@ -14,9 +14,9 @@ export default ({ day }) => {
           <div
             className="stageNameContainer"
             style={{
-              padding: '0 ' + timelinePadding + 'px',
+              paddingLeft: timelinePadding,
               width: totalDayWidth(day),
-              minWidth: 'calc(100vw - ' + timelinePadding * 2 + 'px)'
+              minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
             { day.stages.map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
@@ -24,9 +24,9 @@ export default ({ day }) => {
           <div
             className="stageSetsContainer"
             style={{
-              padding: '0 ' + timelinePadding + 'px',
+              paddingLeft: timelinePadding,
               width: totalDayWidth(day),
-              minWidth: 'calc(100vw - ' + timelinePadding * 2 + 'px)'
+              minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
             <Timeline day={ day } />
