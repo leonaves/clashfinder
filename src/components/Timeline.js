@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Timeline.css';
 
-import { pixelsToMinutes } from '../layoutUtils';
+import { pixelsToMinutes, totalDayWidth } from '../layoutUtils';
 
-export default ({ day }) => {
+const Timeline = ({ day, width }) => {
   const hours = Math.abs(day.start.diff(day.end, 'hours'));
 
   let currentHour = day.start.clone();
@@ -14,7 +15,7 @@ export default ({ day }) => {
     hourMarkers.push(
       <div key={ currentHour.format('HH:mm') }
            className="hourMarker"
-           style={{  top: (pixelsToMinutes * 60 * i) + 'px' }}
+           style={{ top: (pixelsToMinutes * 60 * i) + 'px' }}
       >
         { currentHour.format('HH:mm') }
       </div>
@@ -25,8 +26,16 @@ export default ({ day }) => {
   let top = (0 + 'px');
 
   return (
-    <div className="timeline" style={{ top }}>
+    <div className="timeline" style={{ top, width, minWidth: '100vw' }}>
       { hourMarkers }
     </div>
   )
 };
+
+const mapStateToProps = (state, { day }) => ({
+  width: totalDayWidth(state, day)
+});
+
+export default connect(
+  mapStateToProps
+)(Timeline);

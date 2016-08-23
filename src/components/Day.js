@@ -10,7 +10,7 @@ import { totalDayWidth, timelinePadding } from '../layoutUtils';
 
 import { getDayByIndex, getVisibleStagesForDay } from '../reducers/index';
 
-const Day = ({ day, visibleStages, totalDayWidth }) => {
+const Day = ({ day, visibleStages, width }) => {
   if (day.hasOwnProperty("stages")) {
     return (
       <div className="day">
@@ -18,7 +18,7 @@ const Day = ({ day, visibleStages, totalDayWidth }) => {
             className="stageNameContainer"
             style={{
               paddingLeft: timelinePadding,
-              width: totalDayWidth,
+              width,
               minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
@@ -28,7 +28,7 @@ const Day = ({ day, visibleStages, totalDayWidth }) => {
             className="stageSetsContainer"
             style={{
               paddingLeft: timelinePadding,
-              width: totalDayWidth,
+              width,
               minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
@@ -52,7 +52,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     day,
     visibleStages: getVisibleStagesForDay(state, day),
-    totalDayWidth: totalDayWidth(state, day)
+    width: totalDayWidth(state, day)
   }
 };
 export default connect(
