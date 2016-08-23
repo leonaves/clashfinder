@@ -2,9 +2,7 @@ import React from 'react';
 
 import './Timeline.css';
 
-import {
-  pixelsToMinutes
-} from '../layoutUtils';
+import { pixelsToMinutes } from '../layoutUtils';
 
 export default ({ day }) => {
   const hours = Math.abs(day.start.diff(day.end, 'hours'));
