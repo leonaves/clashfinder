@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 import './App.css';
 
 import Day from './components/Day';
+
 import { getCurrentDay, getCurrentDayIndex, getDaysByName } from './reducers/index';
+import { appHeaderHeight } from './layoutUtils';
 
 const App = ({ day, dayIndex, daysByName, updateDay }) => (
   <div className="App">
-    <div className="App-header">
+    <div className="App-header" style={{ height: appHeaderHeight + 'px' }}>
       <div className="dayButtons">
       {
         daysByName.map((dayName, index) => (

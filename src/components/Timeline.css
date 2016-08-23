@@ -1,0 +1,14 @@
+.timeline {
+    position: relative;
+    z-index: 100;
+}
+
+.hourMarker {
+    position: absolute;
+    width: 100vw;
+    color: #575757;
+    border-top: 1px solid rgba(77, 77, 77, 0.3);
+    text-align: left;
+    height: 20px;
+    left: -50px;
+}

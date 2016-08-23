@@ -9,13 +9,14 @@
     overflow-x: auto;
     overflow-y: hidden;
     position: relative;
-    background-color: #e3e3e3;
 }
 
 .stageSetsContainer {
-    margin: auto;
     overflow-y: auto;
     height: calc(100vh - 60px);
-    min-width: 100vw;
     -webkit-overflow-scrolling: touch;
+}
+
+.stageSetsContainer, .stageNameContainer {
+    margin: auto;
 }

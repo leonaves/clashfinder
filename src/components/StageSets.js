@@ -1,12 +1,7 @@
 import React from 'react';
 import './StageSets.css';
 
-const minutesToPixels = 2;
-
-const pixelsFromDiff = (a, b) => {
-  const diffMinutes = Math.abs(a.diff(b, 'minutes'));
-  return diffMinutes * minutesToPixels;
-};
+import { pixelsFromDiff } from '../layoutUtils';
 
 export default ({ sets, startTime, endTime }) => (
   <div className="sets" style={{ height: pixelsFromDiff(startTime, endTime) }}>
