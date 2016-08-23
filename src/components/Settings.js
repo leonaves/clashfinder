@@ -5,7 +5,7 @@ import './Settings.css';
 export default () => {
   return (
     <div className="settings">
-      <span>Settings</span>
+      Hide Stages:
     </div>
   );
 };
