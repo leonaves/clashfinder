@@ -15,10 +15,11 @@ export default (state = initialState, action) => {
       state.settingsOpen = !state.settingsOpen;
       return Object.assign({}, state);
     case 'TOGGLE_STAGE_VISIBLE':
-      for (let day of state.days) {
-        for (let stage of day.stages) {
+      for (let i in state.days) {
+        for (let stage of state.days[i].stages) {
           if (stage.name === action.stageName) {
             stage.hidden = stage.hidden ? false : true;
+            state.days[i] = Object.assign({}, state.days[i]);
           }
         }
       }
