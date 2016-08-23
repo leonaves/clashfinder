@@ -14,7 +14,8 @@ let store = createStore(appReducer, window.devToolsExtension && window.devToolsE
 
 store.subscribe(() => {
   saveState({
-    hiddenStages: store.getState().hiddenStages
+    hiddenStages: store.getState().hiddenStages,
+    favouriteSets: store.getState().favouriteSets
   });
 });
 

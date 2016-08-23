@@ -1,6 +1,7 @@
 .timeline {
     position: relative;
     z-index: 100;
+    pointer-events: none;
 }
 
 .hourMarker {

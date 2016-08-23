@@ -8,17 +8,3 @@
     height: 100%;
     position: relative;
 }
-
-.sets .set {
-    width: 104%;
-    left: -2%;
-    background-color: #c12826;
-    border-radius: 1px;
-    position: absolute;
-    box-sizing: border-box;
-    white-space: normal;
-    padding: 5px;
-    color: white;
-    border-top: 1px solid #e8e704;
-    border-bottom: 1px solid #e8e704;
-}

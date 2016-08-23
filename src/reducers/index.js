@@ -3,6 +3,7 @@ import { loadState } from '../localStorage';
 
 const freshState = {
   hiddenStages: [],
+  favouriteSets: [],
   settingsOpen: false,
   day: 0,
   days
@@ -35,6 +36,27 @@ export default (state = initialState, action) => {
           }
         }
         if (toggled) break;
+      }
+      return Object.assign({}, state);
+
+    case 'TOGGLE_FAVOURITE_SET':
+      let favourited = false;
+      for (let day of state.days) {
+        for (let stage of day.stages) {
+          for (let set of stage.sets) {
+            if (set.actName === action.set.actName && set.startTime.isSame(action.set.startTime)) {
+              let favourite = state.favouriteSets.indexOf(set.actName + set.startTime);
+              if (favourite > -1) {
+                state.favouriteSets.splice(favourite, 1);
+              } else {
+                state.favouriteSets.push(set.actName + set.startTime);
+              }
+              favourited = true; break;
+            }
+          }
+          if (favourited) break;
+        }
+        if (favourited) break;
       }
       return Object.assign({}, state);
 
@@ -72,4 +94,8 @@ export const getAllStages = (state) => {
 
 export const getVisibleStagesForDay = (state, day) => {
   return day.stages.filter(stage => !state.hiddenStages.includes(stage.name));
+};
+
+export const setIsFavourite = (state) => (set) => {
+  return state.favouriteSets.includes(set.actName + set.startTime)
 };
