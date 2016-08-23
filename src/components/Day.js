@@ -19,7 +19,7 @@ export default ({ day }) => {
               minWidth: 'calc(100vw - ' + timelinePadding + 'px)'
             }}
           >
-            { day.stages.map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
+            { day.stages.filter(stage => !stage.hidden).map(stage => <StageName key={ stage.name } name={ stage.name }/>) }
           </div>
           <div
             className="stageSetsContainer"
@@ -30,7 +30,7 @@ export default ({ day }) => {
             }}
           >
             <Timeline day={ day } />
-            { day.stages.map(stage => (
+            { day.stages.filter(stage => !stage.hidden).map(stage => (
               <StageSets
                 key={ stage.name } name={ stage.name } sets={ stage.sets }
                 startTime={ day.start } endTime={ day.end }

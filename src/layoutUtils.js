@@ -4,7 +4,7 @@ export const timelinePadding = 50;
 
 export const stageWidth = 280;
 export const totalDayWidth = (day) => {
-  return day.stages.length * stageWidth + timelinePadding;
+  return day.stages.filter(stage => !stage.hidden).length * stageWidth + timelinePadding;
 };
 
 export const appHeaderHeight = 65;

@@ -1,7 +1,27 @@
 .settings {
     width: 100vw;
-    height: 200px;
     background-color: #333333;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
     color: white;
+    box-sizing: border-box;
+}
+
+.settings ul {
+    columns: 200px 4;
+    column-gap: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.settings li {
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+
+.settings .closeButton {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
 }
