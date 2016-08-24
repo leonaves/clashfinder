@@ -2,6 +2,7 @@
     position: relative;
     z-index: 100;
     pointer-events: none;
+    min-width: calc(100vw - 50px);
 }
 
 .hourMarker {

@@ -26,7 +26,7 @@ const Timeline = ({ day, width }) => {
   let top = (0 + 'px');
 
   return (
-    <div className="timeline" style={{ top, width, minWidth: '100vw' }}>
+    <div className="timeline" style={{ top, width }}>
       { hourMarkers }
     </div>
   )
