@@ -17,7 +17,7 @@ const AppHeader = ({ dayIndex, daysByName, updateDay, toggleSettingsOpen }) => {
       </div>
       <div className="dayDropDown">
         <Dropdown
-          options={ dayOptions } onChange={ (day) => { console.log(day); updateDay(day.value - 1) } }
+          options={ dayOptions } onChange={ (day) => { updateDay(day.value - 1) } }
           value={ dayOptions[dayIndex] }
         />
       </div>
