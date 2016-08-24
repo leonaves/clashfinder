@@ -3,6 +3,11 @@
     padding: 15px;
     color: white;
     box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    height: 65px;
 }
 
 .settingsButton {
