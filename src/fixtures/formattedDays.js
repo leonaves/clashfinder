@@ -1,5 +1,5 @@
 import moment from 'moment';
-import data from  './reading';
+import data from  './leeds';
 
 const offset = data.UTCOffset;
 const rawStages = data.stages;
