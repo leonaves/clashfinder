@@ -12,6 +12,12 @@
 
 .settingsButton button {
     border-radius: 2px;
+    line-height: 30px;
+}
+
+.settingsButton button svg {
+    height: 20px;
+    width: 20px;
 }
 
 .dayButtons button, .settingsButton button {
