@@ -13,14 +13,6 @@
 .settingsButton button {
     border-radius: 2px;
     line-height: 30px;
-}
-
-.settingsButton button svg {
-    height: 20px;
-    width: 20px;
-}
-
-.dayButtons button, .settingsButton button {
     height: 35px;
     padding: 5px 15px;
     background-color: #454545;
@@ -34,31 +26,58 @@
     margin: 0;
 }
 
+.settingsButton button svg {
+    height: 20px;
+    width: 20px;
+}
+
 .dayButtons button {
     border-right: 1px solid #6d6d6d;
 }
 
-.dayButtons button:hover, .settingsButton button:hover {
-    background-color: #555555;
+.dayDropDown {
+    max-width: 60%;
+    width: 400px;
+    margin: auto;
+    height: 35px;
+    vertical-align: middle;
 }
 
-.dayButtons button:active, .settingsButton button:active {
-    transform: scale(0.99);
-    border-right: none;
-}
-.dayButtons button:active + button {
-    border-left: 1px solid #6d6d6d;
-}
-
-.dayButtons button:first-child {
-    border-radius: 3px 0 0 3px;
+.Dropdown-root, .Dropdown-control, .Dropdown-placeholder {
+    height: 100%;
+    line-height: 35px;
+    vertical-align: middle;
+    position: relative;
+    background-color: #4b4b4b;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
-.dayButtons button:last-child {
-    border-radius: 0 3px 3px 0;
-    border-right: none;
+.Dropdown-root.is-open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.dayButtons button.current {
-    background-color: #8d8e69;
+.Dropdown-menu {
+    border-top: 1px solid #5b5b5b;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+}
+
+.Dropdown-option {
+    background-color: #4b4b4b;
+    cursor: pointer;
+}
+
+.Dropdown-option {
+    cursor: pointer;
+}
+
+.Dropdown-option:hover {
+    background-color: #585858;
 }
