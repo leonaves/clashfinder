@@ -2,7 +2,7 @@ export default {
   UTCOffset: "+01",
   days: [
     {
-      start: "2016-08-25 20:00",
+      start: "2016-08-25 19:00",
       end: "2016-08-26 04:00"
     },
     {
@@ -18,7 +18,7 @@ export default {
       end: "2016-08-29 04:00"
     }
   ],
-  stages:[
+  stages: [
   {
     "name":"Main Stage",
     "sets":[
